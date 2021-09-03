@@ -1,0 +1,24 @@
+{
+  "atem": {
+    "host": "192.168.7.240",
+    "port": 9910
+  },
+  "playcast": {
+    "host": "192.168.7.161",
+    "port": 8383
+  },
+  "actions": [
+    {
+      "when": "pgm",
+      "source": 1,
+      "action": "play",
+      "args": [0]
+    },
+    {
+      "when": "pgm",
+      "source": 2,
+      "action": "play",
+      "args": [1]
+    }
+  ]
+}

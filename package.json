@@ -1,0 +1,31 @@
+{
+  "name": "playcast-client-atem",
+  "version": "0.1.0",
+  "description": "Playcast Middleware ATEM custom client",
+  "main": "index.js",
+  "repository": "https://github.com/gabrieljablonski/playcast-client-atem.git",
+  "author": "Gabriel Jablonski",
+  "license": "MIT",
+  "scripts": {
+    "start": "ts-node src/ --resolveJsonModule"
+  },
+  "dependencies": {
+    "@types/node": "^16.7.10",
+    "@viacast/playcast-client": "^0.1.2",
+    "atem-connection": "^2.3.0",
+    "log-timestamp": "^0.3.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.30.0",
+    "@typescript-eslint/parser": "^4.30.0",
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-typescript": "^2.4.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.3.2",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.4.2"
+  }
+}
