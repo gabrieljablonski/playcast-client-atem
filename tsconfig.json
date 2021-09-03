@@ -6,10 +6,6 @@
     "outDir": "./dist",
     "baseUrl": "src",
     "moduleResolution": "node",
-    "paths": {
-      "@types": ["types.ts"],
-      "@utils": ["utils.ts"]
-    },
     "resolveJsonModule": true
   },
   "include": [

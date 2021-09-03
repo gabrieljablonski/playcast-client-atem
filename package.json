@@ -7,7 +7,8 @@
   "author": "Gabriel Jablonski",
   "license": "MIT",
   "scripts": {
-    "start": "ts-node src/ --resolveJsonModule"
+    "start": "ts-node src/ --resolveJsonModule",
+    "build": "tsc -p tsconfig.json && pkg --target linux -o playcast-client-atem dist/index.js && gzexe playcast-client-atem"
   },
   "dependencies": {
     "@types/node": "^16.7.10",
