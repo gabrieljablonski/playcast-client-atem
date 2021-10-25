@@ -8,7 +8,8 @@
   "license": "MIT",
   "scripts": {
     "start": "ts-node src/ --resolveJsonModule",
-    "build": "tsc -p tsconfig.json && pkg --target linux -o playcast-client-atem dist/index.js && gzexe playcast-client-atem"
+    "build": "tsc -p tsconfig.json && pkg --target linux -o playcast-client-atem dist/index.js && gzexe playcast-client-atem",
+    "deploy": "scp -P10522 ./playcast-client-atem root@192.168.7.161:/viacast/playcast-client-atem/bin/playcast-client-atem"
   },
   "dependencies": {
     "@types/node": "^16.7.10",
