@@ -36,8 +36,11 @@ atem.on('connected', async () => {
   const { actions } = Config.config;
 
   atem.addListener('receivedCommands', command => {
-    const commandName = command[2].constructor.name;
-    const commandSource = command[2].properties.source;
+    const commandName = command[2]?.constructor.name;
+    const commandSource = command[2]?.properties.source;
+    if (!commandName || !commandSource) {
+      return;
+    }
 
     Logger.debug('command from atem:', commandName, commandSource);
 
