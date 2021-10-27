@@ -23,52 +23,48 @@ if (!Config.load()) {
   process.exit(-1);
 }
 
-const atem = new Atem();
+const playcast = new Playcast(Config.config.playcast);
 
-atem.on('error', process.stderr.write);
-atem.on('connected', async () => {
-  Logger.info('ATEM connected');
-
-  const playcast = new Playcast(Config.config.playcast);
-  await playcast.connect();
+playcast.connect().then(() => {
   Logger.info('Playcast connected');
-
-  const { actions } = Config.config;
-
-  atem.addListener('receivedCommands', command => {
-    const commandName = command[2]?.constructor.name;
-    const commandSource = command[2]?.properties.source;
-    if (!commandName || !commandSource) {
-      return;
-    }
-
-    Logger.debug('command from atem:', commandName, commandSource);
-
-    actions.forEach(action => {
-      if (action.when !== 'pgm' && action.when !== 'preview') {
+  const atem = new Atem();
+  atem.on('error', err => Logger.error(err));
+  atem.on('connected', async () => {
+    Logger.info('ATEM connected');
+    const { actions } = Config.config;
+    atem.addListener('receivedCommands', command => {
+      const commandName = command[2]?.constructor.name;
+      const commandSource = command[2]?.properties.source;
+      if (!commandName || !commandSource) {
         return;
       }
-      if (commandSource !== action.source) {
-        return;
-      }
-      if (
-        action.when === 'pgm' &&
-        commandName !== 'ProgramInputUpdateCommand'
-      ) {
-        return;
-      }
-      if (
-        action.when === 'preview' &&
-        commandName !== 'PreviewInputUpdateCommand'
-      ) {
-        return;
-      }
-      if (action.action === 'play') {
-        Logger.debug('sending play to Playcast unit', action.args[0]);
-        playcast.play(action.args[0] as number);
-      }
+      Logger.debug('command from atem:', commandName, commandSource);
+      actions.forEach(action => {
+        if (action.when !== 'pgm' && action.when !== 'preview') {
+          return;
+        }
+        if (commandSource !== action.source) {
+          return;
+        }
+        if (
+          action.when === 'pgm' &&
+          commandName !== 'ProgramInputUpdateCommand'
+        ) {
+          return;
+        }
+        if (
+          action.when === 'preview' &&
+          commandName !== 'PreviewInputUpdateCommand'
+        ) {
+          return;
+        }
+        if (action.action === 'play') {
+          Logger.debug('sending play to Playcast unit', action.args[0]);
+          playcast.play(action.args[0] as number);
+        }
+      });
     });
   });
+  atem.connect(Config.config.atem.host, Config.config.atem.port);
+  setInterval(() => {}, 1000);
 });
-
-atem.connect(Config.config.atem.host, Config.config.atem.port);

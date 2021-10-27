@@ -13,22 +13,22 @@ export default class Logger {
   }
 
   static log(message: string, ...args: unknown[]): void {
-    if (Logger._enabled) console.log(`  [LOG] ${message}`, ...args);
+    if (Logger._enabled) console.error(`  [LOG] ${message}`, ...args);
   }
 
   static info(message: string, ...args: unknown[]): void {
-    if (Logger._enabled) console.log(` [INFO] ${message}`, ...args);
+    if (Logger._enabled) console.error(` [INFO] ${message}`, ...args);
   }
 
   static error(message: string, ...args: unknown[]): void {
-    if (Logger._enabled) console.log(`[ERROR] ${message}`, ...args);
+    if (Logger._enabled) console.error(`[ERROR] ${message}`, ...args);
   }
 
   static warn(message: string, ...args: unknown[]): void {
-    if (Logger._enabled) console.log(` [WARN] ${message}`, ...args);
+    if (Logger._enabled) console.error(` [WARN] ${message}`, ...args);
   }
 
   static debug(message: string, ...args: unknown[]): void {
-    if (Logger._enabled) console.log(`[DEBUG] ${message}`, ...args);
+    if (Logger._enabled) console.error(`[DEBUG] ${message}`, ...args);
   }
 }

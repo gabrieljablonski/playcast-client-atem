@@ -194,10 +194,10 @@
     "@typescript-eslint/types" "4.30.0"
     eslint-visitor-keys "^2.0.0"
 
-"@viacast/playcast-client@^0.1.2":
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/@viacast/playcast-client/-/playcast-client-0.1.2.tgz#0ad551c6157c594e9219ff01f87b9f1ccf6aa5df"
-  integrity sha512-xZ7C74zXtGvduFQf5wRlHZJ1f9xhh1ON2umwZjxGpWuuqJHj1lQ9ENu/Q4o/GPRvLaOa69il0TDtfLBw7iexcQ==
+"@viacast/playcast-client@0.1.4":
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/@viacast/playcast-client/-/playcast-client-0.1.4.tgz#b4923a0d25516b016ef0171805c2dd2e3471c4ad"
+  integrity sha512-vchgYWDBzOvCCGk3tLo6T1p0AJ/ou8Z4EKOJGj489W5UBDEO3i5LMxHKpB3jxF1YD9NhipvtMrh7EoPC4DcF4g==
   dependencies:
     socket.io-client "^4.2.0"
 
@@ -312,10 +312,10 @@ astral-regex@^2.0.0:
   resolved "https://registry.yarnpkg.com/astral-regex/-/astral-regex-2.0.0.tgz#483143c567aeed4785759c0865786dc77d7d2e31"
   integrity sha512-Z7tMw1ytTXt5jqMcOP+OQteU1VuNK9Y02uuJtKQ1Sv69jXQKKg5cibLwGJow8yzZP+eAc18EmLGPal0bp36rvQ==
 
-atem-connection@^2.3.0:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/atem-connection/-/atem-connection-2.3.0.tgz#388cdbfb2805bd9cd4317dfef22360d00a62d647"
-  integrity sha512-/3x+/yNyyR+IbFL6KraGTnkU/3qPs/KoyGZnvfEhvIKVYu3POHCXbIUyPvjUcs9ytalvHgcxLK5slM6sCoIgoA==
+atem-connection@^2.3.1:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/atem-connection/-/atem-connection-2.3.1.tgz#9341ba8095b692cbd7608becf6898486274b67d6"
+  integrity sha512-lw0k0uYDt+Ljf/w4zAEdQSI0g4/FZkFKEsohcYaliotH2rtkRMXkbfHbtQ9e/f8SIdZN4VikJBBeAkHqApi0GA==
   dependencies:
     big-integer "^1.6.48"
     eventemitter3 "^4.0.4"
