@@ -1,5 +1,5 @@
 {
   "configPath": "/viacast/playcast-client-atem/etc/config.json",
-  "version": "v20210903_0.1.0",
-  "commit": "1cf9882c531a25a179de8dceda8851a973f33ddb"
+  "version": "v20211027_0.1.1",
+  "commit": "1d0459a50939c73e58a1d9d2104d8a6018e95d52"
 }
